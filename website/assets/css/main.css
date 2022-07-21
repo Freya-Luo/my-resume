@@ -932,7 +932,25 @@ canvas.particles-js-canvas-el {
 .resume .timeline-year {
   font-size: 14px;
   font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  background: #545454;
+  padding: 0 5px;
+  color: #fff;
 }
+
+.resume .project-title {
+  font-style: italic;
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+
+.resume .project-intro {
+  width: 102%;
+  font-size: 0.9rem;;
+}
+
 
 /*-------------------------
         Work SKILL
