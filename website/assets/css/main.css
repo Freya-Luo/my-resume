@@ -1112,7 +1112,7 @@ canvas.particles-js-canvas-el {
   font-size: 18px;
   font-weight: 700;
   position: relative;
-  left: -2px;
+  /* left: -2px; */
 }
 
 .portfolio .portfolio-icon a:first-child:focus {
@@ -2522,4 +2522,12 @@ canvas.particles-js-canvas-el {
     }
   }
   
+}
+
+.contact .form-item .contact-data::placeholder {
+  color: #ff645e !important;
+}
+
+.contact .form-item .contact-data {
+  color:#fff !important;
 }
