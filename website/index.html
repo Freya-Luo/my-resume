@@ -227,7 +227,7 @@
                                             <div class="text-center">
                                                 <div>
                                                     <h6>Skills:</h6>
-                                                    <p class="mb-0">Vue3 / GraphQL / Apollo / PWAs</p>
+                                                    <p class="mb-0">Vue3 / JSON Schema / Composition API</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -239,22 +239,21 @@
                                     </div>
                                     <div class="text-md-left mt-5">
                                         <p class="my-3">
-                                            This a full-stack progressive web application which is just ike any traditional e-commerce sites. Users can browser categories, toggle cart items, 
-                                            and their identities are verified by Firebase authentication mechanism. By integrating Stripe API and Netlify hosting platform, any payment requests 
-                                            initiated in frontend, even mock ones, would be taken over by backend for the security purpose. (Need to carry SECRET KEY)
+                                            Based on the user inputs, which are essentially JSON Schemas, this application automatically generates HTML Forms for them.
+                                            The <span style="font-weight: bold; font-style: italic;">type</span> keyword in the input schema defines what kind of form 
+                                            field users want to render. The available options include string, number, array, and object. In addtion, nested data structures
+                                            are also supported. For example, with single typed array, user can either specify items to be primitive types, like string,
+                                            or reference types, like object type. Multiple typed array can have different types in one single array, however, each element
+                                            must be explicitly specified. 
                                         </p>
-                                        <p class="mt-3 mb-0">An experimental approach is also implemented in this project.
-                                            <ul>
-                                                <li>
-                                                    <span style="font-style: italic;">Mobile responsiveness</span> supoprt
-                                                </li>
-                                                <li>
-                                                    <span style="font-style: italic;">GraphQL server and Apollo client</span> are applied to replace REST API 
-                                                </li>
-                                                <li>
-                                                    <span style="font-style: italic;">Service Worker</span> is added into the existing project to convert it to PWA
-                                                </li>
-                                            </ul> 
+                                        <p>
+                                            Another feature of this form generator is to validate form fields, which takes the advantages of JSON Schema Ajv validator.
+                                        </p>
+                                        <p>
+                                            However, users may need to render their own forms in different ways, and this requires each individual form component to be 
+                                            independent from others. One of the most important improvement is extracting all rendering logic into a theme provider while
+                                            keeping the underling business logic inside the original component. By applying the similar design pattern, users can even customize
+                                            JSON Schema validators and formats to gain more flexibility.
                                         </p>
                                     </div>
                                 </div>
@@ -281,8 +280,8 @@
                             <div class="row">
                                 <div class="col-12 col-md-10 mx-auto">
                                     <div class="text-center">
-                                        <h2 class="mb-3">E-book <span class="base-color"> Reader</span></h2>
-                                        <p class="max-width-450">An e-book reader supporting full-text search, download, pagination, caching, and theme changing.</p>
+                                        <h2 class="mb-3">eBook <span class="base-color"> Reader</span></h2>
+                                        <p class="max-width-450">An eBook reader supporting full-text search, download, pagination, caching, and theme changing.</p>
                                     </div>
                                     <div class="row contact-info mt-5">
                                         <div class="col-md-6">
@@ -309,9 +308,214 @@
                                     </div>
                                     <div class="text-md-left mt-5">
                                         <p class="my-3">
-                                            This a full-stack progressive web application which is just ike any traditional e-commerce sites. Users can browser categories, toggle cart items, 
-                                            and their identities are verified by Firebase authentication mechanism. By integrating Stripe API and Netlify hosting platform, any payment requests 
-                                            initiated in frontend, even mock ones, would be taken over by backend for the security purpose. (Need to carry SECRET KEY)
+                                            The eBook reader is built on top of Vue2 wit ePub.js engine and backed by Nginx. The core components and their main responsibilities are as follows:
+                                            <ul>
+                                                <li>
+                                                    <span style="font-weight: bold; font-style: italic;">Shelf</span> Component: Store current reading eBooks. It supports adding, removing, and categorizing
+                                                    books into different groups. Extended features are caching and/or downloading eBooks into local devices and setting the privacy of eBook reading status.
+                                                </li>
+                                                <li>
+                                                    <span style="font-weight: bold; font-style: italic;">Home</span> Component: Store and categorize all eBooks. Users can choose an eBook by
+                                                    clicking its cover image, searching the book title, or using the flashcard to randomly pick one.
+                                                </li>
+                                                <li>
+                                                    <span style="font-weight: bold; font-style: italic;">eBook</span> Component: Online reader integrated with ePub.js. By unpacking epub files, it can successfully
+                                                    render book content, record current reading progress, and support full-text searching and highlighting. Besides, switching between multiple 
+                                                    themes and fonts (including font family and font size) are also implemented for a better user experience.
+                                                </li>
+                                                <li>
+                                                    <span style="font-weight: bold; font-style: italic;">Detail</span> Component: List all the details of an eBook, including a brief description and a table of contents.
+                                                </li>
+                                            </ul>
+                                        </p>
+                                        <p class="mt-3 mb-0">
+                                            The backend routes are set up with Node.js and express. Currently, all epub files and images are stored locally and delivered by Nginx server.
+                                            (As this application only focuses on the business logic and functionalities develpoment, the available resources are limited. 
+                                            Most eBooks come with mock content, or even just with the cover pictures.)
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="portfolio-single modal fade" id="portfolio-single-5" tabindex="-1" role="dialog" aria-labelledby="portfolioModalScrollable" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content text-muted">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="portfolioModalScrollable">Analytics Framework</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="pt-4 pb-5">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12 col-md-10 mx-auto">
+                                    <div class="text-center">
+                                        <h2 class="mb-3">Analytics <span class="base-color"> Framework</span></h2>
+                                        <p class="max-width-450">A framework which analyzes sentiment of articles/trends collected within a specific time.</p>
+                                    </div>
+                                    <div class="row contact-info mt-5">
+                                        <div class="col-md-6">
+                                            <div class="text-center">
+                                                <div>
+                                                    <h6 class="contact_detail-title">Github Repo:</h6>
+                                                    <a class="mb-0" href="https://github.com/Freya-Luo/data-visualization-framework/settings" style="font-weight: bold; color: rgb(235, 235, 170)">checkout here</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mt-3 mt-md-0">
+                                            <div class="text-center">
+                                                <div>
+                                                    <h6>Skills:</h6>
+                                                    <p class="mb-0">Java / Google NLP / Plotly</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-5">
+                                        <div class="portfolio-single-item image-border">
+                                            <img src="./assets/img/framework.gif" loading="lazy" class="d-block" alt="...">
+                                        </div>
+                                    </div>
+                                    <div class="text-md-left mt-5">
+                                        <p class="my-3">
+                                           This framework utilizes the text passed from data plugins, analyzes the sentiment using Google Natural Language Processiong (NLP) API and calculates scores (positive, neutral, or negative).
+                                           The returned scores and timestamps would be consumed by visualization plugins, and different charts will be rendered.
+                                        </p>
+                                        <p class="my-3">
+                                            In this project, there are two default data plugins and two default visualization plugins for the purpose of demonstration. Data plugins fetch articles and trends from News
+                                            and Twitter APIs while visualization plugins plot Bar charts and Pie chars with the help of Plotly graphing library. Users can customize any data plugins and apply them to this analyzing framework 
+                                            as long as data has <span style="font-style: italic;font-weight: bold ;">texts and timestamp</span> fields.
+                                         </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="portfolio-single modal fade" id="portfolio-single-6" tabindex="-1" role="dialog" aria-labelledby="portfolioModalScrollable" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content text-muted">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="portfolioModalScrollable">Bubble Bobble</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="pt-4 pb-5">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12 col-md-10 mx-auto">
+                                    <div class="text-center">
+                                        <h2 class="mb-3">Bubble <span class="base-color"> Bobble</span></h2>
+                                        <p class="max-width-450">A classic Japanese arcade game first invented in 1986 by Taito.</p>
+                                    </div>
+                                    <div class="row contact-info mt-5">
+                                        <div class="col-md-6">
+                                            <div class="text-center">
+                                                <div>
+                                                    <h6 class="contact_detail-title">Github Repo:</h6>
+                                                    <a class="mb-0" href="https://github.com/Freya-Luo/bubble-bobble" style="font-weight: bold; color: rgb(235, 235, 170)">checkout here</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mt-3 mt-md-0">
+                                            <div class="text-center">
+                                                <div>
+                                                    <h6>Skills:</h6>
+                                                    <p class="mb-0">C++/ CMake</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-5">
+                                        <div class="portfolio-single-item image-border">
+                                            <img src="./assets/img/bubble.gif" loading="lazy" class="d-block" alt="...">
+                                        </div>
+                                    </div>
+                                    <div class="text-md-left mt-5">
+                                        <p class="my-3">
+                                            The game is developed following the event-driven design pattern. The challenges in this project are basically as follows:
+                                            <ul>
+                                                <li>
+                                                    <span style="font-style: italic;">Map:</span> Load map from bits, detect map edges, and determine how map interacts with other objects.
+                                                </li>
+                                                <li>
+                                                    <span style="font-style: italic;">Moving Mechanism:</span> Hybridize "time state" concept for the backbone of the game. Time stamp is used as a criterion to define
+                                                    the trigger points of certain events. In addition, the movement and animation of objects are optimized to be as smooth as possible.
+                                                </li>
+                                                <li>
+                                                    <span style="font-style: italic;">Music:</span> Background music is played as streaming segments.
+                                                </li>
+                                            </ul>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="portfolio-single modal fade" id="portfolio-single-7" tabindex="-1" role="dialog" aria-labelledby="portfolioModalScrollable" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content text-muted">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="portfolioModalScrollable">Santorini Master</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="pt-4 pb-5">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12 col-md-10 mx-auto">
+                                    <div class="text-center">
+                                        <h2 class="mb-3">Santorini <span class="base-color"> Master</span></h2>
+                                        <p class="max-width-450">An abstract strategy online board game for 2 players.</p>
+                                    </div>
+                                    <div class="row contact-info mt-5">
+                                        <div class="col-md-6">
+                                            <div class="text-center">
+                                                <div>
+                                                    <h6 class="contact_detail-title">Github Repo:</h6>
+                                                    <a class="mb-0" href="https://github.com/Freya-Luo/santorini-web-game" style="font-weight: bold; color: rgb(235, 235, 170)">checkout here</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mt-3 mt-md-0">
+                                            <div class="text-center">
+                                                <div>
+                                                    <h6>Skills:</h6>
+                                                    <p class="mb-0">Java / Handlebars / Multiple Design Patterns </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-5">
+                                        <div class="portfolio-single-item image-border">
+                                            <img src="./assets/img/santorini.gif" loading="lazy" class="d-block" alt="...">
+                                        </div>
+                                    </div>
+                                    <div class="text-md-left mt-5">
+                                        <p class="my-3">
+                                           
                                         </p>
                                         <p class="mt-3 mb-0">An experimental approach is also implemented in this project.
                                             <ul>
@@ -336,7 +540,7 @@
         </div>
     </div>
 
-    <div class="portfolio-single modal fade" id="portfolio-single-5" tabindex="-1" role="dialog" aria-labelledby="portfolioModalScrollable" aria-hidden="true">
+    <div class="portfolio-single modal fade" id="portfolio-single-8" tabindex="-1" role="dialog" aria-labelledby="portfolioModalScrollable" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable" role="document">
             <div class="modal-content text-muted">
                 <div class="modal-header">
@@ -375,216 +579,6 @@
                                     <div class="mt-5">
                                         <div class="portfolio-single-item image-border">
                                             <img src="./assets/img/maze.gif" loading="lazy" class="d-block" alt="...">
-                                        </div>
-                                    </div>
-                                    <div class="text-md-left mt-5">
-                                        <p class="my-3">
-                                            This a full-stack progressive web application which is just ike any traditional e-commerce sites. Users can browser categories, toggle cart items, 
-                                            and their identities are verified by Firebase authentication mechanism. By integrating Stripe API and Netlify hosting platform, any payment requests 
-                                            initiated in frontend, even mock ones, would be taken over by backend for the security purpose. (Need to carry SECRET KEY)
-                                        </p>
-                                        <p class="mt-3 mb-0">An experimental approach is also implemented in this project.
-                                            <ul>
-                                                <li>
-                                                    <span style="font-style: italic;">Mobile responsiveness</span> supoprt
-                                                </li>
-                                                <li>
-                                                    <span style="font-style: italic;">GraphQL server and Apollo client</span> are applied to replace REST API 
-                                                </li>
-                                                <li>
-                                                    <span style="font-style: italic;">Service Worker</span> is added into the existing project to convert it to PWA
-                                                </li>
-                                            </ul> 
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="portfolio-single modal fade" id="portfolio-single-6" tabindex="-1" role="dialog" aria-labelledby="portfolioModalScrollable" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable" role="document">
-            <div class="modal-content text-muted">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="portfolioModalScrollable">Bubble Bobble</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="pt-4 pb-5">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-12 col-md-10 mx-auto">
-                                    <div class="text-center">
-                                        <h2 class="mb-3">Bubble <span class="base-color"> Bobble</span></h2>
-                                        <p class="max-width-450">An e-book reader supporting full-text search, download, pagination, caching, and theme changing.</p>
-                                    </div>
-                                    <div class="row contact-info mt-5">
-                                        <div class="col-md-6">
-                                            <div class="text-center">
-                                                <div>
-                                                    <h6 class="contact_detail-title">Github Repo:</h6>
-                                                    <a class="mb-0" href="https://github.com/Freya-Luo/bubble-bobble" style="font-weight: bold; color: rgb(235, 235, 170)">checkout here</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 mt-3 mt-md-0">
-                                            <div class="text-center">
-                                                <div>
-                                                    <h6>Skills:</h6>
-                                                    <p class="mb-0">C++/ CMake</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="mt-5">
-                                        <div class="portfolio-single-item image-border">
-                                            <img src="./assets/img/bubble.gif" loading="lazy" class="d-block" alt="...">
-                                        </div>
-                                    </div>
-                                    <div class="text-md-left mt-5">
-                                        <p class="my-3">
-                                            This a full-stack progressive web application which is just ike any traditional e-commerce sites. Users can browser categories, toggle cart items, 
-                                            and their identities are verified by Firebase authentication mechanism. By integrating Stripe API and Netlify hosting platform, any payment requests 
-                                            initiated in frontend, even mock ones, would be taken over by backend for the security purpose. (Need to carry SECRET KEY)
-                                        </p>
-                                        <p class="mt-3 mb-0">An experimental approach is also implemented in this project.
-                                            <ul>
-                                                <li>
-                                                    <span style="font-style: italic;">Mobile responsiveness</span> supoprt
-                                                </li>
-                                                <li>
-                                                    <span style="font-style: italic;">GraphQL server and Apollo client</span> are applied to replace REST API 
-                                                </li>
-                                                <li>
-                                                    <span style="font-style: italic;">Service Worker</span> is added into the existing project to convert it to PWA
-                                                </li>
-                                            </ul> 
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="portfolio-single modal fade" id="portfolio-single-7" tabindex="-1" role="dialog" aria-labelledby="portfolioModalScrollable" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable" role="document">
-            <div class="modal-content text-muted">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="portfolioModalScrollable">Santorini Master</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="pt-4 pb-5">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-12 col-md-10 mx-auto">
-                                    <div class="text-center">
-                                        <h2 class="mb-3">Santorini <span class="base-color"> Master</span></h2>
-                                        <p class="max-width-450">An e-book reader supporting full-text search, download, pagination, caching, and theme changing.</p>
-                                    </div>
-                                    <div class="row contact-info mt-5">
-                                        <div class="col-md-6">
-                                            <div class="text-center">
-                                                <div>
-                                                    <h6 class="contact_detail-title">Github Repo:</h6>
-                                                    <a class="mb-0" href="https://github.com/Freya-Luo/santorini-web-game" style="font-weight: bold; color: rgb(235, 235, 170)">checkout here</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 mt-3 mt-md-0">
-                                            <div class="text-center">
-                                                <div>
-                                                    <h6>Skills:</h6>
-                                                    <p class="mb-0">Java / Handlebars</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="mt-5">
-                                        <div class="portfolio-single-item image-border">
-                                            <img src="./assets/img/santorini.gif" loading="lazy" class="d-block" alt="...">
-                                        </div>
-                                    </div>
-                                    <div class="text-md-left mt-5">
-                                        <p class="my-3">
-                                            This a full-stack progressive web application which is just ike any traditional e-commerce sites. Users can browser categories, toggle cart items, 
-                                            and their identities are verified by Firebase authentication mechanism. By integrating Stripe API and Netlify hosting platform, any payment requests 
-                                            initiated in frontend, even mock ones, would be taken over by backend for the security purpose. (Need to carry SECRET KEY)
-                                        </p>
-                                        <p class="mt-3 mb-0">An experimental approach is also implemented in this project.
-                                            <ul>
-                                                <li>
-                                                    <span style="font-style: italic;">Mobile responsiveness</span> supoprt
-                                                </li>
-                                                <li>
-                                                    <span style="font-style: italic;">GraphQL server and Apollo client</span> are applied to replace REST API 
-                                                </li>
-                                                <li>
-                                                    <span style="font-style: italic;">Service Worker</span> is added into the existing project to convert it to PWA
-                                                </li>
-                                            </ul> 
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="portfolio-single modal fade" id="portfolio-single-8" tabindex="-1" role="dialog" aria-labelledby="portfolioModalScrollable" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-scrollable" role="document">
-            <div class="modal-content text-muted">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="portfolioModalScrollable">Analytics Framework</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="pt-4 pb-5">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-12 col-md-10 mx-auto">
-                                    <div class="text-center">
-                                        <h2 class="mb-3">Analytics <span class="base-color"> Framework</span></h2>
-                                        <p class="max-width-450">An e-book reader supporting full-text search, download, pagination, caching, and theme changing.</p>
-                                    </div>
-                                    <div class="row contact-info mt-5">
-                                        <div class="col-md-6">
-                                            <div class="text-center">
-                                                <div>
-                                                    <h6 class="contact_detail-title">Github Repo:</h6>
-                                                    <a class="mb-0" href="https://github.com/Freya-Luo/data-visualization-framework/settings" style="font-weight: bold; color: rgb(235, 235, 170)">checkout here</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 mt-3 mt-md-0">
-                                            <div class="text-center">
-                                                <div>
-                                                    <h6>Skills:</h6>
-                                                    <p class="mb-0">Java / Google NLP</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="mt-5">
-                                        <div class="portfolio-single-item image-border">
-                                            <img src="./assets/img/framework.gif" loading="lazy" class="d-block" alt="...">
                                         </div>
                                     </div>
                                     <div class="text-md-left mt-5">
@@ -695,7 +689,7 @@
                 <li class="list-group-item"><a class="active" href="#hero"><i class="fa fa-home"></i><span>Home</span></a></li>
                 <li class="list-group-item"><a href="#about"><i class="fa fa-user"></i><span>About</span></a></li>
                 <li class="list-group-item"><a href="#resume"><i class="fa fa-address-book"></i><span>Resume</span></a></li>
-                <li class="list-group-item"><a href="#portfolio"><i class="fa fa-briefcase"></i><span>Projetcs</span></a></li>
+                <li class="list-group-item"><a href="#project"><i class="fa fa-briefcase"></i><span>Projetcs</span></a></li>
                 <li class="list-group-item"><a href="#blog"><i class="fa fa-file-text"></i><span>Server Pages</span></a></li>
                 <li class="list-group-item"><a href="#contact"><i class="fa fa-envelope-open"></i><span>Contact</span></a></li>
             </ul>
@@ -756,7 +750,7 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="image-border">
-                                    <img src="./assets/img/bio1.jpeg" alt="/">
+                                    <img src="./assets/img/bio1.jpg" alt="/">
                                 </div>
                             </div>
                             <div class="col-lg-6 mt-4 mt-lg-0">
@@ -1130,7 +1124,7 @@
         <!--     Resume End    -->
 
         <!-- Portfolio Start -->
-        <section id="portfolio" class="portfolio">
+        <section id="project" class="portfolio">
             <div class="display-table">
                 <div class="display-content">
                     <div class="container">
@@ -1251,7 +1245,7 @@
                                         <div class="img-overlay text-center">
                                             <div class="img-overlay-content">
                                                 <div class="portfolio-icon">
-                                                    <a href="javascript:void();" type="button" data-toggle="modal" data-target="#portfolio-single-8"><i class="lni-display-alt"></i></a>
+                                                    <a href="javascript:void();" type="button" data-toggle="modal" data-target="#portfolio-single-5"><i class="lni-display-alt"></i></a>
                                                     <a href="./assets/img/framework.jpg" class="js-zoom-gallery">
                                                         <i class="lni-search"></i>
                                                     </a>
@@ -1304,6 +1298,25 @@
                             <div class="col-lg-4 portfolio-item mobiledesign seo">
                                 <div class="image-border">
                                     <div class="portfolio-item-content">
+                                        <img src="./assets/img/maze.jpg" alt="/" class="img-fluid">
+                                        <div class="img-overlay text-center">
+                                            <div class="img-overlay-content">
+                                                <div class="portfolio-icon">
+                                                    <a href="javascript:void();" type="button" data-toggle="modal" data-target="#portfolio-single-8"><i class="lni-display-alt"></i></a>
+                                                    <a href="./assets/img/maze.jpg" class="js-zoom-gallery">
+                                                        <i class="lni-search"></i>
+                                                    </a>
+                                                </div>
+                                                <h5 class="mt-3 mb-0">Hello Maze</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                            <!-- Item 09 -->
+                            <div class="col-lg-4 portfolio-item mobiledesign seo">
+                                <div class="image-border">
+                                    <div class="portfolio-item-content">
                                         <img src="./assets/img/collab.jpg" alt="/" class="img-fluid">
                                         <div class="img-overlay text-center">
                                             <div class="img-overlay-content">
@@ -1314,25 +1327,6 @@
                                                     </a>
                                                 </div>
                                                 <h5 class="mt-3 mb-0">Collaborative Learning Forum</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> 
-                            <!-- Item 09 -->
-                            <div class="col-lg-4 portfolio-item mobiledesign seo">
-                                <div class="image-border">
-                                    <div class="portfolio-item-content">
-                                        <img src="./assets/img/maze.jpg" alt="/" class="img-fluid">
-                                        <div class="img-overlay text-center">
-                                            <div class="img-overlay-content">
-                                                <div class="portfolio-icon">
-                                                    <a href="javascript:void();" type="button" data-toggle="modal" data-target="#portfolio-single-5"><i class="lni-display-alt"></i></a>
-                                                    <a href="./assets/img/maze.jpg" class="js-zoom-gallery">
-                                                        <i class="lni-search"></i>
-                                                    </a>
-                                                </div>
-                                                <h5 class="mt-3 mb-0">Hello Maze</h5>
                                             </div>
                                         </div>
                                     </div>
