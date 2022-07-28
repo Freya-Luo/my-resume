@@ -503,7 +503,7 @@
                                             <div class="text-center">
                                                 <div>
                                                     <h6>Skills:</h6>
-                                                    <p class="mb-0">Java / Handlebars / Multiple Design Patterns </p>
+                                                    <p class="mb-0">Java / Handlebars / Software Design Patterns </p>
                                                 </div>
                                             </div>
                                         </div>
@@ -515,21 +515,22 @@
                                     </div>
                                     <div class="text-md-left mt-5">
                                         <p class="my-3">
-                                           
+                                           Following the game rules, the software object models in correspondence with the physical models are "Board", "Cell", "Player", and "Worker". This project shows a good 
+                                           practice of combining software design patterns with real-world ideas. 
                                         </p>
-                                        <p class="mt-3 mb-0">An experimental approach is also implemented in this project.
+                                        <p class="my-3">
+                                            To implement God cards, <span style="font-style: italic;font-weight: bold ;">Template Method Pattern</span> is considered as a good choice. God cards, from the real-world perspective, only change some behaviors of the worker's move and build actions 
+                                            (or change the game-winning rules) based on the game's core functionalities. With much duplicate logic, core logic is extracted into an <span style="font-style: italic;font-weight: bold ;">abstract class</span> "God" while each god's 
+                                            specific power is kept in their own subclasses.
+                                         </p>
+                                         <p class="my-3">
+                                            Then, what on earth could <span style="font-style: italic;font-weight: bold ;">Template Method Pattern</span> bring to us?
                                             <ul>
-                                                <li>
-                                                    <span style="font-style: italic;">Mobile responsiveness</span> supoprt
-                                                </li>
-                                                <li>
-                                                    <span style="font-style: italic;">GraphQL server and Apollo client</span> are applied to replace REST API 
-                                                </li>
-                                                <li>
-                                                    <span style="font-style: italic;">Service Worker</span> is added into the existing project to convert it to PWA
-                                                </li>
-                                            </ul> 
-                                        </p>
+                                                <li>Design for <span style="font-weight: bold ;">reuse</span> : pull the massive duplicate code into a superclass</li>
+                                                <li>Design for <span style="font-weight: bold ;">understandability</span> : turn the monolithic non-god behaviors into a series of individual actions in which only some particular steps are extended/modified</li>
+                                                <li>Design for <span style="font-weight: bold ;">extensibility</span> : introduce new gods without having to change many contexts</li>
+                                            </ul>
+                                         </p>
                                     </div>
                                 </div>
                             </div>
@@ -556,7 +557,7 @@
                                 <div class="col-12 col-md-10 mx-auto">
                                     <div class="text-center">
                                         <h2 class="mb-3">Hello <span class="base-color"> Maze</span></h2>
-                                        <p class="max-width-450">An e-book reader supporting full-text search, download, pagination, caching, and theme changing.</p>
+                                        <p class="max-width-450">An engine for generating 2D tile-based explorable maze worlds.</p>
                                     </div>
                                     <div class="row contact-info mt-5">
                                         <div class="col-md-6">
@@ -571,7 +572,7 @@
                                             <div class="text-center">
                                                 <div>
                                                     <h6>Skills:</h6>
-                                                    <p class="mb-0">Java / Binary Space Partition (BSP)</p>
+                                                    <p class="mb-0">Java / Binary Space Partition (BSP)/ Game Design</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -583,22 +584,23 @@
                                     </div>
                                     <div class="text-md-left mt-5">
                                         <p class="my-3">
-                                            This a full-stack progressive web application which is just ike any traditional e-commerce sites. Users can browser categories, toggle cart items, 
-                                            and their identities are verified by Firebase authentication mechanism. By integrating Stripe API and Netlify hosting platform, any payment requests 
-                                            initiated in frontend, even mock ones, would be taken over by backend for the security purpose. (Need to carry SECRET KEY)
+                                            The worlds generated pseudorandomly consists of a 2D grid of graphical tiles, which users will be able to explore by walking around and interacting with objects in that world.
+                                            In <span style="font-style: italic;font-weight: bold ;">Engine</span> class, two methods are provided for interactions. The first is <span style="font-style: italic;">interactWithInputString(String input)</span> 
+                                            that takes as input a series of keyboard inputs, and returns a 2D TETile array representing the state of the universe after processing all the key presses given in input.
+                                            An the second is <span style="font-style: italic;">interactWithKeyboard()</span>. This method takes input from the keyboard, and draws the result of each keypress to the screen.
                                         </p>
-                                        <p class="mt-3 mb-0">An experimental approach is also implemented in this project.
+                                        <p class="mt-3 mb-0">
+                                            The project has the ability to save the state of the wold while exploring, as well as to subsequently load the world into the exact state it was in when last saved. More specifically, 
+                                            the state includes the random number generator.
+                                        </p>
+                                        <p class="mt-3 mb-0">
+                                            Some creative mechanics are defined and implemented to make up the rulebook for the game.
                                             <ul>
-                                                <li>
-                                                    <span style="font-style: italic;">Mobile responsiveness</span> supoprt
-                                                </li>
-                                                <li>
-                                                    <span style="font-style: italic;">GraphQL server and Apollo client</span> are applied to replace REST API 
-                                                </li>
-                                                <li>
-                                                    <span style="font-style: italic;">Service Worker</span> is added into the existing project to convert it to PWA
-                                                </li>
-                                            </ul> 
+                                                <li>Levels are categorized into Easy and Hard modes, where users can see the whole maze world in the Easy exploration mode while only a portion of the world (shielded by black background) in the Hard one.</li>
+                                                <li>Aliens (NPCs) are randomly located and hidden in the Hard mode. Win condition is defined as avatars (users) can successfully escape from the exit and are not attacked by these aliens.</li>
+                                                <li>Hints are provided for users who choose to play in the Hard mode.</li>
+                                                <li>Users can choose different characters and/or differnt shapes of view.</li>
+                                            </ul>
                                         </p>
                                     </div>
                                 </div>
@@ -626,7 +628,7 @@
                                 <div class="col-12 col-md-10 mx-auto">
                                     <div class="text-center">
                                         <h2 class="mb-3">Collaborative Learning <span class="base-color"> Forum</span></h2>
-                                        <p class="max-width-450">An e-book reader supporting full-text search, download, pagination, caching, and theme changing.</p>
+                                        <p class="max-width-450">A Q & A forum and a real-time communication platform for students and instructors.</p>
                                     </div>
                                     <div class="row contact-info mt-5">
                                         <div class="col-md-6">
@@ -653,22 +655,36 @@
                                     </div>
                                     <div class="text-md-left mt-5">
                                         <p class="my-3">
-                                            This a full-stack progressive web application which is just ike any traditional e-commerce sites. Users can browser categories, toggle cart items, 
-                                            and their identities are verified by Firebase authentication mechanism. By integrating Stripe API and Netlify hosting platform, any payment requests 
-                                            initiated in frontend, even mock ones, would be taken over by backend for the security purpose. (Need to carry SECRET KEY)
-                                        </p>
-                                        <p class="mt-3 mb-0">An experimental approach is also implemented in this project.
+                                            <span style="font-size: bold;">Question and Answering Forum</span> mimics the functionalities in Piazza, and it supports four core features:  
                                             <ul>
                                                 <li>
-                                                    <span style="font-style: italic;">Mobile responsiveness</span> supoprt
+                                                    <span style="font-style: italic;">Basic Forum</span>: Tutees can ask questions on the forum and others (tutors and other tutees) can answer the question. Solved questions will be 
+                                                    collected into groups by question tags for others to review.
                                                 </li>
                                                 <li>
-                                                    <span style="font-style: italic;">GraphQL server and Apollo client</span> are applied to replace REST API 
+                                                    <span style="font-style: italic;">Posts Filtering and Searching</span>: Posts are filtered by tags and searching so that users can quickly check questions under the same group or containing 
+                                                    the specified keywords.
                                                 </li>
                                                 <li>
-                                                    <span style="font-style: italic;">Service Worker</span> is added into the existing project to convert it to PWA
+                                                    <span style="font-style: italic;">User's Activities Statistics</span>: The statistics of the user's activity, including posting questions, answering questions, and most concerned disciplines,
+                                                    etc., are collected and plotted to graphs. 
                                                 </li>
-                                            </ul> 
+                                            </ul>
+                                        </p>
+                                        <p class="my-3">
+                                            <span style="font-size: bold;">Real-time Communication Platform</span> allows tutees to connect with tutors via various media types.
+                                            <ul>
+                                                <li>
+                                                    <span style="font-style: italic;">Real-time Chat</span>: A chat panel can be poped up from the message icon next to each question. When tutee opens a new chat session, a notification will be
+                                                    pushed to tutor so that they can jump into the conversation.
+                                                </li>
+                                                <li>
+                                                    <span style="font-style: italic;">Voice Call and Video  Call</span>:  Peer-to-peer voice and video calls are routed from the chat panel by integrating with Google Meeting API.
+                                                </li>
+                                            </ul>
+                                        </p>
+                                        <p class="mt-3 mb-0">
+                                            (Due to credential-related reasons, only wireframe is presented here.)
                                         </p>
                                     </div>
                                 </div>
@@ -787,7 +803,6 @@
                         <!--  Service Start  -->
                         <div class="services">
                             <div class="row">
-                                <!-- Item 01 -->
                                 <div style="text-align: justify;">
                                     <div class="services-item box-hover-border" style="padding-right: 2.25rem;">
                                         <div class="float-left mt-lg-1 d-inline-block services-icon">
@@ -816,9 +831,12 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                         <!--   Service End   -->
+                        <div style="margin-top: 2rem; text-align: center;">
+                            <p style="font-size: 0.9rem;">Image © 2022 Yue Wang</p>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -1147,22 +1165,22 @@
                                     <a href="#" data-filter="*" class="pill-button active">All</a>
                                 </li>
                                 <li class="button-border list-inline-item">
-                                    <a href="#" data-filter=".webdesign" class="pill-button">Web Design</a>
+                                    <a href="#" data-filter=".fullstack" class="pill-button">Full Stack App</a>
                                 </li>
                                 <li class="button-border list-inline-item">
-                                    <a href="#" data-filter=".mobiledesign" class="pill-button">Mobile Design</a>
+                                    <a href="#" data-filter=".toolframework" class="pill-button">Tool & Framework</a>
                                 </li>
                                 <li class="button-border list-inline-item">
-                                    <a href="#" data-filter=".seo" class="pill-button">Seo</a>
+                                    <a href="#" data-filter=".game" class="pill-button">Game</a>
                                 </li>
                                 <li class="button-border list-inline-item">
-                                    <a href="#" data-filter=".graphic" class="pill-button">Graphic</a>
+                                    <a href="#" data-filter=".platform" class="pill-button">Platform</a>
                                 </li>
                             </ul>
                         </div>
                         <div class="portfolio-items row">
                             <!-- Item 01 -->
-                            <div class="col-lg-4 portfolio-item seo">
+                            <div class="col-lg-4 portfolio-item fullstack toolframework">
                                 <div class="image-border">
                                     <div class="portfolio-item-content">
                                         <img src="./assets/img/codebook.jpg" alt="/" class="img-fluid">
@@ -1181,7 +1199,7 @@
                                 </div>
                             </div>
                             <!-- Item 02 -->
-                            <div class="col-lg-4 portfolio-item graphic webdesign">
+                            <div class="col-lg-4 portfolio-item fullstack">
                                 <div class="image-border">
                                     <div class="portfolio-item-content">
                                         <img src="./assets/img/clothing.jpg" alt="/" class="img-fluid">
@@ -1200,7 +1218,7 @@
                                 </div>
                             </div>
                             <!-- Item 03 -->
-                            <div class="col-lg-4 portfolio-item webdesign graphic">
+                            <div class="col-lg-4 portfolio-item toolframework">
                                 <div class="image-border">
                                     <div class="portfolio-item-content">
                                         <img src="./assets/img/form.jpg" alt="/" class="img-fluid">
@@ -1219,7 +1237,7 @@
                                 </div>
                             </div>
                             <!-- Item 04 -->
-                            <div class="col-lg-4 portfolio-item mobiledesign webdesign">
+                            <div class="col-lg-4 portfolio-item fullstack">
                                 <div class="image-border">
                                     <div class="portfolio-item-content">
                                         <img src="./assets/img/ebook.jpg" alt="/" class="img-fluid">
@@ -1237,8 +1255,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Item 05 -->
-                            <div class="col-lg-4 portfolio-item mobiledesign">
+                             <!-- Item 05 -->   
+                             <div class="col-lg-4 portfolio-item toolframework">
                                 <div class="image-border">
                                     <div class="portfolio-item-content">
                                         <img src="./assets/img/framework.jpg" alt="/" class="img-fluid">
@@ -1255,9 +1273,9 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div>   
                             <!-- Item 06 -->
-                            <div class="col-lg-4 portfolio-item mobiledesign seo">
+                            <div class="col-lg-4 portfolio-item game">
                                 <div class="image-border">
                                     <div class="portfolio-item-content">
                                         <img src="./assets/img/bubble.jpg" alt="/" class="img-fluid">
@@ -1274,9 +1292,9 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>                            
+                            </div>                                                             
                             <!-- Item 07 -->
-                            <div class="col-lg-4 portfolio-item mobiledesign seo">
+                            <div class="col-lg-4 portfolio-item game">
                                 <div class="image-border">
                                     <div class="portfolio-item-content">
                                         <img src="./assets/img/santorini.jpg" alt="/" class="img-fluid">
@@ -1295,7 +1313,7 @@
                                 </div>
                             </div> 
                             <!-- Item 08 -->
-                            <div class="col-lg-4 portfolio-item mobiledesign seo">
+                            <div class="col-lg-4 portfolio-item game">
                                 <div class="image-border">
                                     <div class="portfolio-item-content">
                                         <img src="./assets/img/maze.jpg" alt="/" class="img-fluid">
@@ -1314,7 +1332,7 @@
                                 </div>
                             </div> 
                             <!-- Item 09 -->
-                            <div class="col-lg-4 portfolio-item mobiledesign seo">
+                            <div class="col-lg-4 portfolio-item platform">
                                 <div class="image-border">
                                     <div class="portfolio-item-content">
                                         <img src="./assets/img/collab.jpg" alt="/" class="img-fluid">
@@ -1331,7 +1349,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div> 
+                            </div>              
                         </div>
                         <div class="row mt-4">
                             <div class="col-12 text-center pt-2">
@@ -1368,40 +1386,62 @@
                         </div>
                         <div class="row">
                             <!--  Item 01 -->
-                            <div class="col-lg-4">
+                            <div class="col-lg-6">
                                 <div class="blog-item box-border">
-                                    <div class="blog-image">
+                                    <!-- <div class="blog-image">
                                         <div class="blog-intro">
                                             <img src="https://placehold.co/720x480" alt="/">
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div class="blog-content">
-                                        <ul class="list-inline mt-4">
-                                                <li class="list-inline-item">
-                                                    <i class="lni-calendar base-color"></i>
-                                                    <span class="text-muted">June 02, 2020 </span>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <i class="lni-comment base-color"></i>
-                                                    <span class="text-muted">5</span>
-                                                </li>
-                                            </ul>
-                                            <h5 class="mb-3"><a class="text-dark" href="javascript:void(0)" target="_blank" data-toggle="modal" data-target="#blog-single"> Be Your Best Version</a></h5>
+                                       
+                                        <h5 class="mb-3"><a class="text-dark" href="https://freyaluo.notion.site/File-Caching-Proxy-61775bc677fe44429cb782b6d4543aa7"> File Caching Proxy</a></h5>
+                                        <p class="blog-feature-tag"><i class="base-color lni-tag"></i> Distributed System</p>
                                         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore.</p>
+                                        <ul class="list-inline mt-4">
+                                            <li class="list-inline-item">
+                                                <i class="lni-calendar base-color"></i>
+                                                <span class="text-muted"> Feb, 2022 - Mar, 2022 </span>
+                                            </li>
+                                        </ul>
                                         <div class="blog-link">
-                                            <a class="base-color" href="javascript:void(0)" target="_blank" data-toggle="modal" data-target="#blog-single">Read More...</a>
+                                            <a class="base-color" href="https://freyaluo.notion.site/File-Caching-Proxy-61775bc677fe44429cb782b6d4543aa7">Read More...</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="blog-item box-border">
+                                    <!-- <div class="blog-image">
+                                        <div class="blog-intro">
+                                            <img src="https://placehold.co/720x480" alt="/">
+                                        </div>
+                                    </div> -->
+                                    <div class="blog-content">
+                                       
+                                        <h5 class="mb-3"><a class="text-dark" href="https://freyaluo.notion.site/File-Caching-Proxy-61775bc677fe44429cb782b6d4543aa7"> File Caching Proxy</a></h5>
+                                        <p class="blog-feature-tag"><i class="base-color lni-tag"></i> Distributed System</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore.</p>
+                                        <ul class="list-inline mt-4">
+                                            <li class="list-inline-item">
+                                                <i class="lni-calendar base-color"></i>
+                                                <span class="text-muted"> Feb, 2022 - Mar, 2022 </span>
+                                            </li>
+                                        </ul>
+                                        <div class="blog-link">
+                                            <a class="base-color" href="https://freyaluo.notion.site/File-Caching-Proxy-61775bc677fe44429cb782b6d4543aa7">Read More...</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <!--  Item 02 -->
-                            <div class="col-lg-4">
+                            <div class="col-lg-6">
                                 <div class="blog-item box-border">
-                                    <div class="blog-image">
+                                    <!-- <div class="blog-image">
                                         <div class="blog-intro">
                                             <img src="https://placehold.co/720x480" alt="/">
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div class="blog-content">
                                         <ul class="list-inline mt-4">
                                                 <li class="list-inline-item">
@@ -1414,6 +1454,7 @@
                                                 </li>
                                             </ul>
                                             <h5 class="mb-3"><a class="text-dark" href="javascript:void(0)" target="_blank" data-toggle="modal" data-target="#blog-single"> 5 Tips In UI/UX Web Design</a></h5>
+                                            <p class="blog-feature-tag"><i class="base-color lni-tag"></i> Distributed System</p>
                                         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore.</p>
                                         <div class="blog-link">
                                             <a class="base-color" href="javascript:void(0)" target="_blank" data-toggle="modal" data-target="#blog-single">Read More...</a>
@@ -1422,13 +1463,13 @@
                                 </div>
                             </div>
                             <!--  Item 03 -->
-                            <div class="col-lg-4">
+                            <div class="col-lg-6">
                                 <div class="blog-item box-border">
-                                    <div class="blog-image">
+                                    <!-- <div class="blog-image">
                                         <div class="blog-intro">
                                             <img src="https://placehold.co/720x480" alt="/">
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div class="blog-content">
                                         <ul class="list-inline mt-4">
                                                 <li class="list-inline-item">
@@ -1441,6 +1482,7 @@
                                                 </li>
                                             </ul>
                                             <h5 class="mb-3"><a class="text-dark" href="javascript:void(0)" target="_blank" data-toggle="modal" data-target="#blog-single"> Write Your Dreams</a></h5>
+                                            <p class="blog-feature-tag"><i class="base-color lni-tag"></i> Distributed System</p>
                                         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore.</p>
                                         <div class="blog-link">
                                             <a class="base-color" href="javascript:void(0)" target="_blank" data-toggle="modal" data-target="#blog-single">Read More...</a>
@@ -1448,95 +1490,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <!--  Item 04 -->
-                            <div class="col-lg-4">
-                                <div class="blog-item box-border">
-                                    <div class="blog-image">
-                                        <div class="blog-intro">
-                                            <img src="https://placehold.co/720x480" alt="/">
-                                        </div>
-                                    </div>
-                                    <div class="blog-content">
-                                        <ul class="list-inline mt-4">
-                                                <li class="list-inline-item">
-                                                    <i class="lni-calendar base-color"></i>
-                                                    <span class="text-muted">June 20, 2020 </span>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <i class="lni-comment base-color"></i>
-                                                    <span class="text-muted">2</span>
-                                                </li>
-                                            </ul>
-                                            <h5 class="mb-3"><a class="text-dark" href="javascript:void(0)" target="_blank" data-toggle="modal" data-target="#blog-single"> Be Your Best Version</a></h5>
-                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore.</p>
-                                        <div class="blog-link">
-                                            <a class="base-color" href="javascript:void(0)" target="_blank" data-toggle="modal" data-target="#blog-single">Read More...</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--  Item 05 -->
-                            <div class="col-lg-4">
-                                <div class="blog-item box-border">
-                                    <div class="blog-image">
-                                        <div class="blog-intro">
-                                            <img src="https://placehold.co/720x480" alt="/">
-                                        </div>
-                                    </div>
-                                    <div class="blog-content">
-                                        <ul class="list-inline mt-4">
-                                                <li class="list-inline-item">
-                                                    <i class="lni-calendar base-color"></i>
-                                                    <span class="text-muted">June 20, 2020 </span>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <i class="lni-comment base-color"></i>
-                                                    <span class="text-muted">10</span>
-                                                </li>
-                                            </ul>
-                                            <h5 class="mb-3"><a class="text-dark" href="javascript:void(0)" target="_blank" data-toggle="modal" data-target="#blog-single"> 5 Tips In UI/UX Web Design</a></h5>
-                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore.</p>
-                                        <div class="blog-link">
-                                            <a class="base-color" href="javascript:void(0)" target="_blank" data-toggle="modal" data-target="#blog-single">Read More...</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--  Item 06 -->
-                            <div class="col-lg-4">
-                                <div class="blog-item box-border">
-                                    <div class="blog-image">
-                                        <div class="blog-intro">
-                                            <img src="https://placehold.co/720x480" alt="/">
-                                        </div>
-                                    </div>
-                                    <div class="blog-content">
-                                        <ul class="list-inline mt-4">
-                                                <li class="list-inline-item">
-                                                    <i class="lni-calendar base-color"></i>
-                                                    <span class="text-muted">June 25, 2020 </span>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <i class="lni-comment base-color"></i>
-                                                    <span class="text-muted">12</span>
-                                                </li>
-                                            </ul>
-                                        <h5 class="mb-3"><a class="text-dark" href="javascript:void(0)" target="_blank" data-toggle="modal" data-target="#blog-single"> Write Your Dreams</a></h5>
-                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore.</p>
-                                        <div class="blog-link">
-                                            <a class="base-color" href="javascript:void(0)" target="_blank" data-toggle="modal" data-target="#blog-single">Read More...</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
+                        <!-- <div class="row">
                             <div class="col-12 text-center">
                                 <div class="button-border">
                                     <a href="blog.html" class="pill-button">View More</a>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

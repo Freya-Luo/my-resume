@@ -2531,3 +2531,9 @@ canvas.particles-js-canvas-el {
 .contact .form-item .contact-data {
   color:#fff !important;
 }
+
+.blog-feature-tag {
+  font-size: 0.9rem;
+  color: #bfc4bf;
+  margin-bottom: 0.5rem !important;
+}
