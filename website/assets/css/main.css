@@ -2537,3 +2537,11 @@ canvas.particles-js-canvas-el {
   color: #bfc4bf;
   margin-bottom: 0.5rem !important;
 }
+
+.blog-summary {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 6; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
